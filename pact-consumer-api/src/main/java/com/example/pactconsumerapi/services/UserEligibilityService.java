@@ -1,19 +1,22 @@
 package com.example.pactconsumerapi.services;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-class EligibilityResponse {
+import java.io.Serializable;
+
+class EligibilityResponse implements Serializable {
 
     private boolean isEligible;
 
     public EligibilityResponse() {}
 
-    public boolean isEligible() {
+    public boolean getIsEligible() {
         return this.isEligible;
     }
 
-    public void setEligible(boolean eligible) {
+    public void setIsEligible(boolean eligible) {
         this.isEligible = eligible;
     }
 }
@@ -29,7 +32,7 @@ public class UserEligibilityService {
                 EligibilityResponse.class
         );
 
-        return response.isEligible();
+        return response.getIsEligible();
     }
 
 }

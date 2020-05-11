@@ -1,0 +1,60 @@
+{
+    "provider": {
+        "name": "pact-provider-api"
+    },
+    "consumer": {
+        "name": "pact-consumer-api"
+    },
+    "interactions": [
+        {
+            "description": "Eligible user?",
+            "request": {
+                "method": "GET",
+                "path": "/is-eligible",
+                "query": {
+                    "email": [
+                        "test@gmail.com"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "isEligible": true
+                }
+            }
+        },
+        {
+            "description": "Ineligible user",
+            "request": {
+                "method": "GET",
+                "path": "/is-eligible",
+                "query": {
+                    "email": [
+                        "test@kainos.com"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "isEligible": false
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.0"
+        }
+    }
+}
