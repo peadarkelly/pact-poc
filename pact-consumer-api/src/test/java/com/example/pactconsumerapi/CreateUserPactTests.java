@@ -44,7 +44,8 @@ public class CreateUserPactTests {
         headers.put("Content-Type", "application/json");
 
         return builder
-                .uponReceiving("Ineligible user")
+                .given("Create Ineligible User")
+                    .uponReceiving("Ineligible user")
                     .path("/is-eligible")
                     .query("email=test@kainos.com")
                     .method("GET")
@@ -52,7 +53,8 @@ public class CreateUserPactTests {
                     .status(200)
                     .headers(headers)
                     .body("{\"isEligible\": false}")
-                .uponReceiving("Eligible user?")
+                .given("Create Eligible User")
+                    .uponReceiving("Eligible user")
                     .path("/is-eligible")
                     .query("email=test@gmail.com")
                     .method("GET")

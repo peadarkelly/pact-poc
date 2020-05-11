@@ -1,5 +1,7 @@
 package com.example.pactproviderapi.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class EligibilityResponse {
 
     private boolean isEligible;
@@ -8,6 +10,7 @@ public class EligibilityResponse {
         this.isEligible = isEligible;
     }
 
+    @JsonProperty("isEligible")
     public boolean isEligible() {
         return this.isEligible;
     }

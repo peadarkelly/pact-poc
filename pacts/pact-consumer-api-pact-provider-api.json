@@ -7,27 +7,6 @@
     },
     "interactions": [
         {
-            "description": "Eligible user?",
-            "request": {
-                "method": "GET",
-                "path": "/is-eligible",
-                "query": {
-                    "email": [
-                        "test@gmail.com"
-                    ]
-                }
-            },
-            "response": {
-                "status": 200,
-                "headers": {
-                    "Content-Type": "application/json"
-                },
-                "body": {
-                    "isEligible": true
-                }
-            }
-        },
-        {
             "description": "Ineligible user",
             "request": {
                 "method": "GET",
@@ -46,7 +25,38 @@
                 "body": {
                     "isEligible": false
                 }
-            }
+            },
+            "providerStates": [
+                {
+                    "name": "Create Ineligible User"
+                }
+            ]
+        },
+        {
+            "description": "Eligible user",
+            "request": {
+                "method": "GET",
+                "path": "/is-eligible",
+                "query": {
+                    "email": [
+                        "test@gmail.com"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "isEligible": true
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Create Eligible User"
+                }
+            ]
         }
     ],
     "metadata": {
