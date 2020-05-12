@@ -2,7 +2,7 @@
 
 ## Prerequsites:
 
-* [Docker](https://docs.docker.com/compose/install/)
+* [Docker](https://docs.docker.com/get-docker/)
 * [OpenJDK 11](https://jdk.java.net/archive/)
 * [Maven](https://maven.apache.org/download.cgi)
 
