@@ -33,7 +33,7 @@ Stop container:
 
 Connect to PSQL prompt from docker:
 
-   docker exec -it postgres-demo psql -U postgres
+    docker exec -it postgres-demo psql -U postgres
 
 Create the Database:
 
